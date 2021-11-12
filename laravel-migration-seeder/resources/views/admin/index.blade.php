@@ -6,7 +6,7 @@
     <div class="container-main">
         <div class="wrapper-container">
 
-        @forelse
+        @forelse($vacanze as $vacanza)
             <div class="card">
 
                 <div class="card-header">
@@ -21,7 +21,7 @@
 
             </div>
             @empty
-            
+            <p>ciao</p>
             @endforelse
         </div>
     </div>
