@@ -22,5 +22,6 @@ Auth::routes();
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function(){
 
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/index', 'VacanzaController@index')->name('vacanza');
 });
 

@@ -17,7 +17,7 @@ class CreateVacanzeTable extends Migration
             $table->id();
             $table->string("title", 50);
             $table->string("location", 80);
-            $table->int("persone", 10);
+            $table->integer("persone");
             $table->string("date", 80);
             $table->timestamps();
         });
