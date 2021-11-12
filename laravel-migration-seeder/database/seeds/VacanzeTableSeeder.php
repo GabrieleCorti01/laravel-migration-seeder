@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Models\Vacanza;
 
+use Faker\Generator as Faker;
+
 class VacanzeTableSeeder extends Seeder
 {
     /**
@@ -10,8 +12,9 @@ class VacanzeTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
+
         $vacanze = [
             [
                 "title" => "Vacanze sulla neve",
@@ -41,5 +44,17 @@ class VacanzeTableSeeder extends Seeder
 
             $newVacanza->save();  
         }
+
+        for ($i = 0; $i < 12; $i++){
+            $newVacanza = new Vacanza();
+            $newVacanza->title = $faker->name();
+            $newVacanza->location = $faker->name();
+            $newVacanza->persone = $faker->randomNumber(1, 6);
+            $newVacanza->date = $faker->dateTime();
+
+            $newVacanza->save();
+
+        }
     }
+    
 }
